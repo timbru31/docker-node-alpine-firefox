@@ -1,4 +1,4 @@
-# Node.js with Firefox Dockerfile
+# Node.js with Firefox Dockerfile [![Docker Automated build](https://img.shields.io/docker/automated/timbru31/node-alpine-firefox.svg)](https://hub.docker.com/r/timbru31/node-alpine-firefox/) [![Docker Build Status](https://img.shields.io/docker/build/timbru31/node-alpine-firefox.svg)](https://hub.docker.com/r/timbru31/node-alpine-firefox/)
 
 A minimal Dockerfile based on Node.js 8 LTS (Carbon) alpine with Firefox installed.
 
