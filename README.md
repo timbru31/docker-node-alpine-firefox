@@ -4,12 +4,12 @@
 [![Docker Build Status](https://img.shields.io/docker/build/timbru31/node-alpine-firefox.svg)](https://hub.docker.com/r/timbru31/node-alpine-firefox/)
 [![Build Status](https://travis-ci.org/timbru31/docker-node-alpine-firefox.svg?branch=master)](https://travis-ci.org/timbru31/docker-node-alpine-firefox)
 
-A minimal Dockerfile based on Node.js 8 LTS (Carbon) alpine with Firefox installed.
+A minimal Dockerfile based on Node.js 10 LTS (Dubnium) alpine with Firefox installed.
 
 ## What's included
 
-* Node.js 8
-* npm 5
+* Node.js 10
+* npm 6
 * yarn
 * Firefox
 
