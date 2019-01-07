@@ -5,7 +5,8 @@ ARG REFRESHED_AT
 ENV REFRESHED_AT $REFRESHED_AT
 
 RUN apk add --no-cache \
-  ttf-freefont
+  ttf-freefont \
+  sqlite-libs
 
 RUN apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ --allow-untrusted --no-cache \
   icu-libs
