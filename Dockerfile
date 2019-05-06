@@ -4,12 +4,10 @@ LABEL maintainer "Tim Brust <tim.brust@sinnerschrader.com>"
 ARG REFRESHED_AT
 ENV REFRESHED_AT $REFRESHED_AT
 
-RUN apk add --no-cache \
-  ttf-freefont \
-  sqlite-libs
-
-RUN apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ --allow-untrusted --no-cache \
-  icu-libs
-
-RUN apk add --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ --allow-untrusted --no-cache \
-  firefox
+RUN echo @edge http://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
+  echo @edge http://dl-cdn.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories && \
+  echo @edge http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
+  apk add --no-cache \
+  firefox@edge \
+  freetype@edge \
+  ttf-freefont@edge
