@@ -11,4 +11,5 @@ RUN echo @edge http://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/r
   firefox@edge \
   freetype@edge \
   ttf-freefont@edge \
-  nss@edge
+  nss@edge \
+  libstdc++@edge
