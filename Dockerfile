@@ -10,4 +10,5 @@ RUN echo @edge http://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/r
   apk add --no-cache \
   firefox@edge \
   freetype@edge \
-  ttf-freefont@edge
+  ttf-freefont@edge \
+  nss@edge
