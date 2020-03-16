@@ -12,4 +12,5 @@ RUN echo @edge http://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/r
   freetype@edge \
   ttf-freefont@edge \
   nss@edge \
-  libstdc++@edge
+  libstdc++@edge \
+  sqlite-libs@edge
