@@ -13,6 +13,17 @@ A minimal Dockerfile based on Node.js 12 LTS (Erbium) alpine with Firefox instal
 - yarn
 - Firefox
 
+## Available platforms
+
+These Dockerfiles leverage the new `buildx` functionality and offer the following platforms:
+- linux/amd64
+- linux/arm64
+- linux/arm/v7
+- linux/arm/v6
+- linux/ppc64le
+- linux/s390x
+- linux/386
+
 ---
 
 Built by (c) Tim Brust and contributors. Released under the MIT license.
