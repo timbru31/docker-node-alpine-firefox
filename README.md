@@ -2,7 +2,7 @@
 
 [![Docker Automated build](https://img.shields.io/docker/automated/timbru31/node-alpine-firefox.svg)](https://hub.docker.com/r/timbru31/node-alpine-firefox/)
 [![buildx Status](https://github.com/timbru31/docker-node-alpine-firefox/workflows/buildx/badge.svg)](https://github.com/timbru31/docker-node-alpine-firefox/actions?query=workflow%3Abuildx)
-[![Build Status](https://travis-ci.org/timbru31/docker-node-alpine-firefox.svg?branch=master)](https://travis-ci.org/timbru31/docker-node-alpine-firefox)
++[![Lint Dockerfiles](https://github.com/timbru31/docker-node-alpine-firefox/workflows/Lint%20Dockerfiles/badge.svg)](https://github.com/timbru31/docker-node-alpine-firefox/actions?query=workflow%3A%22Lint+Dockerfiles%22)
 
 A minimal Dockerfile based on Node.js 12 LTS (Erbium) alpine with Firefox installed.
 
