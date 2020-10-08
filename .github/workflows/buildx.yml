@@ -2,7 +2,7 @@ name: buildx
 
 on:
   schedule:
-    - cron: '37 08 * * *'
+    - cron: "37 08 * * *"
   pull_request:
   push:
 
@@ -14,50 +14,45 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Prepare
-        id: prepare
-        run: |
-          DOCKER_IMAGE=timbru31/node-alpine-firefox
-          PLATFORMS=linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
-          TAGS="--tag ${DOCKER_IMAGE}:latest"
-          VERSION=latest
-
-          echo ::set-output name=docker_image::${DOCKER_IMAGE}
-          echo ::set-output name=version::${VERSION}
-          echo ::set-output name=buildx_args::--platform ${PLATFORMS} \
-            --build-arg REFRESHED_AT=$(date +%Y-%m-%d) \
-            ${TAGS} --file ./Dockerfile .
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
 
       - name: Set up Docker Buildx
         id: buildx
         uses: docker/setup-buildx-action@v1
         with:
-          version: latest
+          install: true
 
       - name: Available platforms
         run: echo ${{ steps.buildx.outputs.platforms }}
 
       - name: Docker Buildx (build)
-        run: |
-          docker buildx build --output "type=image,push=false" ${{ steps.prepare.outputs.buildx_args }}
+        uses: docker/build-push-action@v2
+        if: success() && !contains(github.ref, 'master')
+        with:
+          push: false
+          build-args: REFRESHED_AT=$(date +%Y-%m-%d)
+          platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
       - name: Docker Login
-        if: success() && github.event_name != 'pull_request'
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: |
-          echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
+        if: success() && contains(github.ref, 'master')
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Buildx (push)
-        if: success() && github.event_name != 'pull_request'
-        run: |
-          docker buildx build --output "type=image,push=true" ${{ steps.prepare.outputs.buildx_args }}
+        uses: docker/build-push-action@v2
+        if: success() && contains(github.ref, 'master')
+        with:
+          push: true
+          build-args: REFRESHED_AT=$(date +%Y-%m-%d)
+          platforms: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
 
       - name: Docker Check Manifest
         if: always() && github.event_name != 'pull_request'
         run: |
-          docker run --rm mplatform/mquery ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.version }}
+          docker run --rm mplatform/mquery timbru31/node-alpine-firefox:latest
 
       - name: Clear
         if: always() && github.event_name != 'pull_request'
