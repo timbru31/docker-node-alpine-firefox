@@ -4,11 +4,11 @@
 [![buildx Status](https://github.com/timbru31/docker-node-alpine-firefox/workflows/buildx/badge.svg)](https://github.com/timbru31/docker-node-alpine-firefox/actions?query=workflow%3Abuildx)
 [![Lint Dockerfiles](https://github.com/timbru31/docker-node-alpine-firefox/workflows/Lint%20Dockerfiles/badge.svg)](https://github.com/timbru31/docker-node-alpine-firefox/actions?query=workflow%3A%22Lint+Dockerfiles%22)
 
-A minimal Dockerfile based on Node.js 12 LTS (Erbium) alpine with Firefox installed.
+A minimal Dockerfile based on Node.js 14 LTS (Fermium) alpine with Firefox installed.
 
 ## What's included
 
-- Node.js 12 LTS
+- Node.js 14 LTS
 - npm 6
 - yarn
 - Firefox
@@ -16,6 +16,7 @@ A minimal Dockerfile based on Node.js 12 LTS (Erbium) alpine with Firefox instal
 ### Available platforms
 
 These Dockerfiles leverage the new `buildx` functionality and offer the following platforms:
+
 - linux/amd64
 - linux/arm64
 - linux/arm/v7
