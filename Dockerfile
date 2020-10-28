@@ -1,4 +1,4 @@
-FROM node:fermium-alpine
+FROM node:fermium-alpine3.12
 LABEL maintainer "Tim Brust <tim.brust@sinnerschrader.com>"
 
 ARG REFRESHED_AT
