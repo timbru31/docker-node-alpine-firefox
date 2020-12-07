@@ -32,7 +32,7 @@ jobs:
         with:
           push: false
           build-args: REFRESHED_AT=$(date +%Y-%m-%d)
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          platforms: linux/amd64,linux/arm64
           tags: timbru31/node-alpine-firefox:latest
 
       - name: Docker Login
@@ -48,7 +48,7 @@ jobs:
         with:
           push: true
           build-args: REFRESHED_AT=$(date +%Y-%m-%d)
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          platforms: linux/amd64,linux/arm64
           tags: timbru31/node-alpine-firefox:latest
 
       - name: Docker Check Manifest
