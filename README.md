@@ -9,7 +9,7 @@ A minimal Dockerfile based on Node.js 16 LTS (Gallium) alpine with Firefox insta
 ## What's included
 
 - Node.js 16 LTS
-- npm 7
+- npm 8
 - yarn
 - Firefox
 
