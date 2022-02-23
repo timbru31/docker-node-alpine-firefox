@@ -8,4 +8,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2.4.0
       - name: Build the Docker image
-        run: docker run -i $(docker build -q .) /bin/sh -c "firefox --version && node --version && firefox -headless -screenshot https://github.com && test -f screenshot.png"
+        run: |
+          docker run -i $(docker build -q .) /bin/sh -c "firefox --version && node --version && firefox -headless -screenshot https://github.com && test -f screenshot.png"
+          docker cp $(docker ps -aq):/screenshot.png screenshot.png
+          
+      - uses: actions/upload-artifact@v2
+        with:
+          name: screenshot
+          path: screenshot.png
