@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2.4.0
       - name: Build the Docker image
-        run: docker run -i $(docker build -q .) /bin/sh -c "firefox --version && node --version && firefox -headless -screenshot https://github.com"
+        run: docker run -i $(docker build -q .) /bin/sh -c "firefox --version && node --version && firefox -headless -screenshot https://github.com && file -f screenshot.png"
