@@ -4,11 +4,11 @@
 [![buildx Status](https://github.com/timbru31/docker-node-alpine-firefox/workflows/buildx/badge.svg)](https://github.com/timbru31/docker-node-alpine-firefox/actions?query=workflow%3Abuildx)
 [![Lint Dockerfiles](https://github.com/timbru31/docker-node-alpine-firefox/workflows/Lint%20Dockerfiles/badge.svg)](https://github.com/timbru31/docker-node-alpine-firefox/actions?query=workflow%3A%22Lint+Dockerfiles%22)
 
-A minimal Dockerfile based on Node.js 16 LTS (Gallium) alpine with Firefox installed.
+A minimal Dockerfile based on Node.js 18 LTS (Hydrogen) alpine with Firefox installed.
 
 ## What's included
 
-- Node.js 16 LTS
+- Node.js 18 LTS
 - npm 8
 - yarn
 - Firefox
