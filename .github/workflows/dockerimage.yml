@@ -16,3 +16,17 @@ jobs:
         with:
           name: screenshot
           path: screenshot.png
+
+  auto-merge:
+    runs-on: ubuntu-latest
+    needs: build
+
+    permissions:
+      pull-requests: write
+      contents: write
+
+    steps:
+      - name: Automatically merge dependabot upgrades
+        uses: fastify/github-action-merge-dependabot@v3
+        with:
+          target: minor
