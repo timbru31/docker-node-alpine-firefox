@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Build the Docker image
         run: |
           docker run -i $(docker build -q .) /bin/sh -c "firefox --version && node --version && firefox -headless -screenshot https://github.com && test -f screenshot.png"
