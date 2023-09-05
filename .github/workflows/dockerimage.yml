@@ -11,13 +11,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.0.0
+
       - name: Build the Docker image
         run: |
           docker run -i $(docker build -q .) /bin/sh -c "firefox --version && node --version && firefox -headless -screenshot https://github.com && test -f screenshot.png"
           docker cp $(docker ps -aq):/screenshot.png screenshot.png
           
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v3.1.2
         with:
           name: screenshot
           path: screenshot.png
@@ -32,6 +33,6 @@ jobs:
 
     steps:
       - name: Automatically merge dependabot upgrades
-        uses: fastify/github-action-merge-dependabot@v3
+        uses: fastify/github-action-merge-dependabot@v3.9.1
         with:
           target: minor
