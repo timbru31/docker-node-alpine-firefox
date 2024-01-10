@@ -1,4 +1,4 @@
-FROM node:hydrogen-alpine
+FROM node:iron-alpine
 LABEL maintainer "Tim Brust <tim.brust@sinnerschrader.com>"
 
 ARG REFRESHED_AT
