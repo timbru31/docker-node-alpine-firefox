@@ -4,12 +4,12 @@
 [![buildx Status](https://github.com/timbru31/docker-node-alpine-firefox/workflows/buildx/badge.svg)](https://github.com/timbru31/docker-node-alpine-firefox/actions?query=workflow%3Abuildx)
 [![Lint Dockerfiles](https://github.com/timbru31/docker-node-alpine-firefox/workflows/Lint%20Dockerfiles/badge.svg)](https://github.com/timbru31/docker-node-alpine-firefox/actions?query=workflow%3A%22Lint+Dockerfiles%22)
 
-A minimal Dockerfile based on Node.js 20 LTS (Iron) alpine with Firefox installed.
+A minimal Dockerfile based on Node.js 22 LTS (Jod) alpine with Firefox installed.
 
 ## What's included
 
-- Node.js 20 LTS
-- npm 9
+- Node.js 22 LTS
+- npm 10
 - yarn
 - Firefox
 
