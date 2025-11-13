@@ -19,7 +19,6 @@ These Dockerfiles leverage the new `buildx` functionality and offer the followin
 
 - linux/amd64
 - linux/arm64
-- linux/arm/v7
 
 ---
 
