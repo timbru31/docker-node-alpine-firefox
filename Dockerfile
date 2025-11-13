@@ -1,4 +1,4 @@
-FROM node:jod-alpine
+FROM node:krypton-alpine
 LABEL maintainer="Tim Brust <tim.brust@sinnerschrader.com>"
 
 ARG REFRESHED_AT
