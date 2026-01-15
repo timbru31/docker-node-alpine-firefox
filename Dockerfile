@@ -1,5 +1,5 @@
 FROM node:krypton-alpine
-LABEL maintainer="Tim Brust <tim.brust@sinnerschrader.com>"
+LABEL maintainer="Tim Prüssing <github@timbrust.de>"
 
 ARG REFRESHED_AT
 ENV REFRESHED_AT=$REFRESHED_AT
